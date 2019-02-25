@@ -12,7 +12,7 @@ else
 fi
 
 set -x
-install_prefix=../../../outlib/myfunc/${arch}
+install_prefix=../../../outlib/numberGenerator/${arch}
 
 rm -rf build && mkdir build && cd build
 ${cmake} .. -DCMAKE_MAKE_PROGRAM=${make_program} -DCMAKE_TOOLCHAIN_FILE=${toolchain} -DANDROID_NDK=${android_ndk} -DCMAKE_BUILD_TYPE=${build_type} -DANDROID_ABI=${arch} -DCMAKE_GENERATOR=${gernerator} -DCMAKE_INSTALL_PREFIX="${install_prefix}"
