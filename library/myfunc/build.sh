@@ -1,5 +1,6 @@
 if [[ $# -lt 2 ]]; then
   echo "Usage: ${0} arch builder_os"
+  echo "eg: ${0} armeabi-v7a windows"
   exit 1
 fi
 arch=$1

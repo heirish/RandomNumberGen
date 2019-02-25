@@ -21,7 +21,10 @@ add_library( # Sets the name of the library.
              src/main/cpp/native-lib.cpp )
 
 add_library(myfunc STATIC IMPORTED)
-set_target_properties(myfunc PROPERTIES IMPORTED_LOCATION ${THIRD_PARTY_DIR}/myfunc/lib/libmyfunc.a)
+set_target_properties(myfunc PROPERTIES IMPORTED_LOCATION ${THIRD_PARTY_DIR}/myfunc/${ANDROID_ABI}/lib/libmyfunc.a)
+
+add_library(randomgenerator STATIC IMPORTED)
+set_target_properties(randomgenerator PROPERTIES IMPORTED_LOCATION ${THIRD_PARTY_DIR}/numberGenerator/${ANDROID_ABI}/lib/librandomgenerator.a)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -45,7 +48,10 @@ target_link_libraries( # Specifies the target library.
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib}
-                        myfunc)
+                        myfunc
+                        randomgenerator)
 
 #target_include_directories(native-lib PRIVATE
-include_directories(${THIRD_PARTY_DIR}/myfunc/include)
+include_directories(
+                    ${THIRD_PARTY_DIR}/myfunc/${ANDROID_ABI}/include
+                    ${THIRD_PARTY_DIR}/numbergenerator/${ANDROID_ABI}/include)

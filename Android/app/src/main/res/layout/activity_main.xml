@@ -4,25 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-   <!-- tools:context=".MainActivity"-->
+    <!-- tools:context=".MainActivity"-->
 
     <TextView
         android:id="@+id/sample_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
+        android:textSize="38dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="Generate"
+        android:layout_marginEnd="21dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="96dp"
+        android:onClick="generate"
         android:text="Run"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="163dp" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonRand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonRand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="rand"
+        android:text="Rand"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonRun"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonRun"
+        app:layout_constraintTop_toTopOf="@+id/buttonRun" />
 
 </android.support.constraint.ConstraintLayout>

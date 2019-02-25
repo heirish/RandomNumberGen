@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
 
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
+        tv.setText("Hello");
     }
 
     /**
@@ -46,9 +46,15 @@ public class MainActivity extends Activity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+    public native String giveMeNumbers();
 
-    public void Generate(View view) {
+    public void generate(View view) {
         TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText("Generated!");
+        tv.setText(stringFromJNI());
+    }
+
+    public void rand(View view) {
+        TextView tv = (TextView) findViewById(R.id.sample_text);
+        tv.setText(giveMeNumbers());
     }
 }

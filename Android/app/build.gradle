@@ -12,8 +12,9 @@ android {
 
         externalNativeBuild {
             cmake {
-                abiFilters "x86"
-                arguments '-DANDROID_TOOLCHAIN=clang'
+                abiFilters "armeabi-v7a"
+                arguments "-DANDROID_TOOLCHAIN=clang","-DCMAKE_BUILD_TYPE=Release"
+                cppFlags "-fPIC"
             }
         }
     }
